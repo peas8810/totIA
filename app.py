@@ -5,7 +5,7 @@ import pdfplumber
 from fpdf import FPDF
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
-from transformers import RobertaTokenizer, RobertaForSequenceClassification  # Dependência do transformers
+from transformers import RobertaTokenizer, RobertaForSequenceClassification
 import torch  # Dependência do transformers
 import streamlit as st
 
