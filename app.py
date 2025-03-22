@@ -1,7 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
-from PyPDF2 import PdfReader
+import pdfplumber  # Substituindo PyPDF2 por pdfplumber
 from fpdf import FPDF
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
@@ -50,12 +50,12 @@ def analyze_text(text):
     }
     return result
 
-# Função para extrair texto de PDF
+# Função para extrair texto de PDF usando pdfplumber
 def extract_text_from_pdf(pdf_file):
     text = ""
-    pdf_reader = PdfReader(pdf_file)  # Usando PdfReader do PyPDF2
-    for page in pdf_reader.pages:
-        text += page.extract_text() or ""
+    with pdfplumber.open(pdf_file) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text() or ""  # Extrai o texto de cada página
     return text
 
 # Função para gerar relatório em PDF
