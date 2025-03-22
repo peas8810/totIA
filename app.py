@@ -64,7 +64,7 @@ def generate_pdf_report(results):
     pdf.add_page()
     pdf.set_margins(10, 10, 10)
     pdf.set_font('Arial', 'B', 16)
-    pdf.cell(0, 10, 'Relatório de Análise de Texto', ln=True, align='C')
+    pdf.cell(0, 10, 'Relatório de Análise de Texto - TotalIA - PEAS.Co', ln=True, align='C')
     pdf.ln(10)
 
     pdf.set_font('Arial', '', 12)
