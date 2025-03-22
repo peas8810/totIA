@@ -1,8 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
-import PdfReader
-from PyPDF2 
+from PyPDF2 import PdfReader
 from fpdf import FPDF
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
