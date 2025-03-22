@@ -82,7 +82,7 @@ def generate_pdf_report(results):
                  "Interpretação do valor\n"
                  "0% a 30% - Baixa probabilidade de IA (provavelmente texto humano)\n"
                  "30% a 60% - Área de incerteza (o texto pode conter partes geradas por IA ou apenas seguir um padrão formal)\n"
-                 "60% a 100% - Alta probabilidade de IA (muito provável que o texto seja gerado por um modelo de linguagem como GPT, Bard, etc.)
+                 "60% a 100% - Alta probabilidade de IA (muito provável que o texto seja gerado por um modelo de linguagem como GPT, Bard, etc.)")
                 
                  "Como funciona o modelo RoBERTa\n"
                  "O RoBERTa (Robustly optimized BERT approach) é um modelo avançado de NLP (Processamento de Linguagem Natural) desenvolvido pela Meta (Facebook AI). Ele é treinado com grandes volumes de texto e é altamente eficaz na análise semântica.\n\n"
