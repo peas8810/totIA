@@ -1,7 +1,7 @@
 streamlit
 numpy
 pandas
-PyPDF2
+pypdf
 fpdf2
 scikit-learn
 torch
