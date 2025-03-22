@@ -1,12 +1,12 @@
 import re
 import numpy as np
 import pandas as pd
-import pdfplumber  # Substituindo PyPDF2 por pdfplumber
+import pdfplumber
 from fpdf import FPDF
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
-import torch
+import torch  # Dependência do transformers
 import streamlit as st
 
 # Modelo Roberta para análise avançada
