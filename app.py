@@ -1,7 +1,8 @@
 import re
 import numpy as np
 import pandas as pd
-from pypdf import PdfReader  # Substituído PyPDF2 por pypdf
+import PdfReader
+from PyPDF2 
 from fpdf import FPDF
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
@@ -53,7 +54,7 @@ def analyze_text(text):
 # Função para extrair texto de PDF
 def extract_text_from_pdf(pdf_file):
     text = ""
-    pdf_reader = PdfReader(pdf_file)  # Usando PdfReader do pypdf
+    pdf_reader = PdfReader(pdf_file)  # Usando PdfReader do PyPDF2
     for page in pdf_reader.pages:
         text += page.extract_text() or ""
     return text
