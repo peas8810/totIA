@@ -95,7 +95,7 @@ def generate_pdf_report(results):
     pdf.output("relatorio_IA.pdf", 'F')
 
 # Interface do Streamlit
-st.title("🔍 Análise de Texto para Detecção de IA")
+st.title("🔍 TotalIA - Análise de Texto para Detecção de IA - PEAS.Co")
 st.write("Faça o upload de um arquivo PDF para análise:")
 
 uploaded_file = st.file_uploader("Escolha um arquivo PDF", type="pdf")
