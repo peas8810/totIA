@@ -80,13 +80,13 @@ def generate_pdf_report(results):
     pdf.set_font('Arial', '', 12)
     pdf.multi_cell(0, 10, "A 'Avaliação Roberta (Confiabilidade IA)' representa a pontuação gerada pelo modelo RoBERTa para indicar a probabilidade de que um texto tenha sido escrito por uma inteligência artificial.\n\n" \
                  
-                "Interpretação do valor\n"
+                 "Interpretação do valor\n"
                  "0% a 30% - Baixa probabilidade de IA (provavelmente texto humano)\n"
                  "30% a 60% - Área de incerteza (o texto pode conter partes geradas por IA ou apenas seguir um padrão formal)\n"
                  "60% a 100% - Alta probabilidade de IA (muito provável que o texto seja gerado por um modelo de linguagem como GPT, Bard, etc.)")
                    
                    
-                "Como funciona o modelo RoBERTa\n"
+                 "Como funciona o modelo RoBERTa\n"
                  "O RoBERTa (Robustly optimized BERT approach) é um modelo avançado de NLP (Processamento de Linguagem Natural) desenvolvido pela Meta (Facebook AI). Ele é treinado com grandes volumes de texto e é altamente eficaz na análise semântica.\n\n"
                  "No seu caso, estamos utilizando o RoBERTa para avaliar:\n"
                  "Coesão textual - Textos gerados por IA costumam apresentar padrões previsíveis.\n"
