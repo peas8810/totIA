@@ -1,9 +1,8 @@
 streamlit
-transformers
-torch
+numpy
+pandas
 pdfplumber
 fpdf
 scikit-learn
-numpy
-pandas
-re
+transformers
+torch
