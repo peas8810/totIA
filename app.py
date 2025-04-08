@@ -6,6 +6,7 @@ from fpdf import FPDF
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
 import torch
 import streamlit as st
+import io
 
 @st.cache_resource
 def load_model():
