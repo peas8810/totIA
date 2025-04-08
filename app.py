@@ -128,10 +128,9 @@ if uploaded_file is not None:
 
     generate_pdf_report(resultado)
     with open("relatorio_IA.pdf", "rb") as pdf_file:
-    st.download_button(
-        label="📥 Baixar Relatório em PDF",
-        data=pdf_file.read(),
-        file_name="relatorio_IA.pdf",
-        mime="application/pdf",
-    )
-    
+        st.download_button(
+            label="📥 Baixar Relatório em PDF",
+            data=pdf_file.read(),
+            file_name="relatorio_IA.pdf",
+            mime="application/pdf",
+        )
