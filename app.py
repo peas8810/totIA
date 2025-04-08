@@ -3,27 +3,21 @@ import numpy as np
 import pandas as pd
 import pdfplumber
 from fpdf import FPDF
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.ensemble import RandomForestClassifier
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
 import torch
 import streamlit as st
 
-# Defina o diretório de cache onde os arquivos do modelo estarão armazenados.
-CACHE_DIR = "./cache"
+@st.cache_resource
+def load_model():
+    tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
+    model = RobertaForSequenceClassification.from_pretrained('roberta-base')
+    return tokenizer, model
 
-# Tente carregar os modelos apenas a partir dos arquivos locais.
 try:
-    tokenizer = RobertaTokenizer.from_pretrained(
-        'roberta-base', 
-        cache_dir=CACHE_DIR, 
-        local_files_only=True
-    )
-    model = RobertaForSequenceClassification.from_pretrained(
-        'roberta-base', 
-        cache_dir=CACHE_DIR, 
-        local_files_only=True
-    )
+    tokenizer, model = load_model()
+except Exception as e:
+    st.error("Falha ao carregar o modelo. Tente recarregar a página.")
+    st.stop()
 except EnvironmentError as env_err:
     st.error(
         "Erro ao carregar o modelo Roberta. Certifique-se de que os arquivos do modelo 'roberta-base' " 
