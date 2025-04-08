@@ -1,8 +1,9 @@
 streamlit
+transformers
+torch
+pdfplumber
+fpdf
+scikit-learn
 numpy
 pandas
-pdfplumber
-fpdf2
-scikit-learn
-torch
-transformers
+re
