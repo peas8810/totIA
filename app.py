@@ -70,7 +70,7 @@ def analyze_text(text):
 # Função para extrair texto de PDF usando pdfplumber
 def extract_text_from_pdf(pdf_file):
     text = ""
-    with pdfplumber.open(pdf_file) as pdf:
+    with pdfplumber.open(io.BytesIO(pdf_file.read())) as pdf:
         for page in pdf.pages:
             text += page.extract_text() or ""
     return text
@@ -128,9 +128,10 @@ if uploaded_file is not None:
 
     generate_pdf_report(resultado)
     with open("relatorio_IA.pdf", "rb") as pdf_file:
-        st.download_button(
-            label="📥 Baixar Relatório em PDF",
-            data=pdf_file,
-            file_name="relatorio_IA.pdf",
-            mime="application/pdf",
-        )
+    st.download_button(
+        label="📥 Baixar Relatório em PDF",
+        data=pdf_file.read(),
+        file_name="relatorio_IA.pdf",
+        mime="application/pdf",
+    )
+    
