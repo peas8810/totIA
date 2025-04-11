@@ -8,7 +8,8 @@ import torch
 import streamlit as st
 import io
 
-@st.cache_resource
+# Use @st.cache com allow_output_mutation para versões que não suportam cache_resource.
+@st.cache(allow_output_mutation=True)
 def load_model():
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
     model = RobertaForSequenceClassification.from_pretrained('roberta-base')
@@ -16,15 +17,15 @@ def load_model():
 
 try:
     tokenizer, model = load_model()
+except EnvironmentError as env_err:
+    st.error(
+        "Erro ao carregar o modelo Roberta. Certifique-se de que os arquivos do modelo 'roberta-base' "
+        "estão disponíveis localmente ou que há acesso à internet para o download."
+    )
+    st.stop()
 except Exception as e:
     st.error("Falha ao carregar o modelo. Tente recarregar a página.")
     st.stop()
-except EnvironmentError as env_err:
-    st.error(
-        "Erro ao carregar o modelo Roberta. Certifique-se de que os arquivos do modelo 'roberta-base' " 
-        "estão disponíveis localmente no diretório indicado (./cache), ou permita o acesso à internet para o download."
-    )
-    raise env_err
 
 # Função para pré-processamento do texto
 def preprocess_text(text):
@@ -112,7 +113,6 @@ st.title("🔍 TotalIA - Análise de Texto para Detecção de IA - PEAS.Co")
 st.write("Faça o upload de um arquivo PDF para análise:")
 
 uploaded_file = st.file_uploader("Escolha um arquivo PDF", type="pdf")
-
 if uploaded_file is not None:
     texto = extract_text_from_pdf(uploaded_file)
     resultado = analyze_text(texto)
