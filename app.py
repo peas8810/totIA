@@ -152,7 +152,7 @@ def generate_pdf_report(results: dict) -> str:
 # =============================
 # 🖥️ Interface Streamlit
 # =============================
-st.title("🔍 TotalIA - Detecção de Texto Escrito por IA")
+st.title("🔍 TotalIA - Detecção de Texto Escrito por IA - PEAS.Co")
 st.write("Faça o upload de um PDF para análise:")
 
 uploaded = st.file_uploader("Escolha um arquivo PDF", type="pdf")
