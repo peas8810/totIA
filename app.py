@@ -152,7 +152,7 @@ def generate_pdf_report(results: dict) -> str:
 # =============================
 # 🖥️ Interface Streamlit
 # =============================
-st.title("🔍 TotalIA - Detecção de Texto por IA")
+st.title("🔍 TotalIA - Detecção de Texto Escrito por IA")
 st.write("Faça o upload de um PDF para análise:")
 
 uploaded = st.file_uploader("Escolha um arquivo PDF", type="pdf")
@@ -177,7 +177,7 @@ if uploaded:
 # 📋 Registro de Usuário (ao final)
 # =============================
 st.markdown("---")
-st.subheader("📋 Cadastre-se para Receber Novidades")
+st.subheader("📋 Registro de Usuário - Cadastre-se")
 nome = st.text_input("Nome completo", key="nome")
 email = st.text_input("E-mail", key="email")
 if st.button("Registrar meus dados"):
