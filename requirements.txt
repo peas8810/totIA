@@ -6,3 +6,5 @@ fpdf
 scikit-learn
 transformers
 torch
+qrcode
+pillow
